@@ -101,8 +101,8 @@
 			children = (
 				762E4BFD23AD337800337E39 /* AppDelegate.swift */,
 				762E4BFF23AD337800337E39 /* SceneDelegate.swift */,
-				762E4C0123AD337800337E39 /* ViewController.swift */,
-				762E4C0323AD337900337E39 /* Main.storyboard */,
+				762E4C2D23AD339600337E39 /* Controller */,
+				762E4C2E23AD33A200337E39 /* View */,
 				762E4C0623AD337C00337E39 /* Assets.xcassets */,
 				762E4C0823AD337C00337E39 /* LaunchScreen.storyboard */,
 				762E4C0B23AD337C00337E39 /* Info.plist */,
@@ -126,6 +126,22 @@
 				762E4C2123AD337C00337E39 /* Info.plist */,
 			);
 			path = TempoUITests;
+			sourceTree = "<group>";
+		};
+		762E4C2D23AD339600337E39 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				762E4C0123AD337800337E39 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		762E4C2E23AD33A200337E39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				762E4C0323AD337900337E39 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
