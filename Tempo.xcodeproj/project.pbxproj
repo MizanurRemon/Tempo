@@ -15,6 +15,7 @@
 		762E4C0A23AD337C00337E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762E4C0823AD337C00337E39 /* LaunchScreen.storyboard */; };
 		762E4C1523AD337C00337E39 /* TempoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E4C1423AD337C00337E39 /* TempoTests.swift */; };
 		762E4C2023AD337C00337E39 /* TempoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E4C1F23AD337C00337E39 /* TempoUITests.swift */; };
+		767CF10023B730CA00455EC9 /* weatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CF0FF23B730CA00455EC9 /* weatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		762E4C1B23AD337C00337E39 /* TempoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		762E4C1F23AD337C00337E39 /* TempoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoUITests.swift; sourceTree = "<group>"; };
 		762E4C2123AD337C00337E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		767CF0FF23B730CA00455EC9 /* weatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				762E4C0623AD337C00337E39 /* Assets.xcassets */,
 				762E4C0823AD337C00337E39 /* LaunchScreen.storyboard */,
 				762E4C0B23AD337C00337E39 /* Info.plist */,
+				767CF10123B730D100455EC9 /* Model */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -142,6 +145,14 @@
 				762E4C0323AD337900337E39 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		767CF10123B730D100455EC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				767CF0FF23B730CA00455EC9 /* weatherManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			files = (
 				762E4C0223AD337800337E39 /* ViewController.swift in Sources */,
 				762E4BFE23AD337800337E39 /* AppDelegate.swift in Sources */,
+				767CF10023B730CA00455EC9 /* weatherManager.swift in Sources */,
 				762E4C0023AD337800337E39 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = remon.Tempo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = remon.Tempo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var place: UILabel!
     
+    var manageweather = weatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,10 +23,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func searchButton(_ sender: Any) {
+        if search.text == ""{
+            place.text = nil
+            popupalert()
+        }
+        else{
+            place.text = search.text!
+        }
         search.endEditing(true)
-        let text = search.text!
-        print(text)
-        place.text = text
+        
+        if let city = place.text{
+            manageweather.fetchWeather(cityName: city)
+        }
+        
+        
     }
     
     @IBAction func exitButton(_ sender: Any) {
@@ -40,12 +52,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if search.text == ""{
+            place.text = nil
+            popupalert()
+        }
+        else{
+            place.text = search.text!
+        }
         search.endEditing(true)
-        place.text = search.text!
+        
+        if let city = place.text{
+            manageweather.fetchWeather(cityName: city)
+        }
+        
         return true
     }
     
     
-
+   func textFieldDidEndEditing(_ textField: UITextField) {
+        search.text = ""
+    }
+    
+    
+    func popupalert(){
+        let popalert = UIAlertController(title: "Error", message: "Place Missing", preferredStyle: UIAlertController.Style.alert)
+                  
+            popalert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+         present(popalert, animated: true, completion: nil)
+    }
 }
 
