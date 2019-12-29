@@ -20,26 +20,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         search.delegate = self
-        
-    }
-    @IBAction func searchButton(_ sender: Any) {
-        if search.text == ""{
-            place.text = nil
-            popupalert()
-        }
-        else{
-            place.text = search.text!
-        }
-        search.endEditing(true)
-        
-        if let city = place.text{
-            manageweather.fetchWeather(cityName: city)
-        }
-        
+       
         
     }
     
+    func popupalert(){
+        let popalert = UIAlertController(title: "Error", message: "Place Missing", preferredStyle: UIAlertController.Style.alert)
+                  
+            popalert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+         present(popalert, animated: true, completion: nil)
+    }
+    
+    
+    
     @IBAction func exitButton(_ sender: Any) {
+        
         let alert = UIAlertController(title: "Quit", message: "Are you sure?", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Yse", style: .destructive, handler: { _ in
@@ -48,8 +44,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
-
+        
+        
     }
+    
+    
+    
+    @IBAction func searchButton(_ sender: Any) {
+        if search.text == ""{
+            place.text = nil
+            popupalert()
+        }
+        else{
+            if let city = search.text{
+                manageweather.fetchWeather(cityName: city)
+                search.endEditing(true)
+                
+                
+            }
+        
+        }
+        
+        place.text = manageweather.location
+    }
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if search.text == ""{
@@ -57,14 +76,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             popupalert()
         }
         else{
-            place.text = search.text!
+            if let city = search.text{
+                manageweather.fetchWeather(cityName: city)
+                search.endEditing(true)
+                
+               
+            }
+    
         }
-        search.endEditing(true)
-        
-        if let city = place.text{
-            manageweather.fetchWeather(cityName: city)
-        }
-        
+        place.text = manageweather.location
         return true
     }
     
@@ -74,12 +94,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func popupalert(){
-        let popalert = UIAlertController(title: "Error", message: "Place Missing", preferredStyle: UIAlertController.Style.alert)
-                  
-            popalert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        
-         present(popalert, animated: true, completion: nil)
-    }
+    
 }
+
 

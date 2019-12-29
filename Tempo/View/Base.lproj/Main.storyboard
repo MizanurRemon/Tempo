@@ -65,7 +65,7 @@
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="exitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7e-3u-Stw"/>
+                                    <action selector="exitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42A-s0-lUh"/>
                                 </connections>
                             </button>
                         </subviews>

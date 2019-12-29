@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct weatherManager {
+class weatherManager {
+    var location: String = ""
+    var temperature: Double = 0
+    var conditionID: Int = 0
     let adress = "https://api.openweathermap.org/data/2.5/weather?appid=7013acc9bca4f12a02f7fe47b7646e5c&units=metric"
     
     
@@ -50,9 +53,16 @@ struct weatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            print("Location: ", decodedData.name)
-            print("Temperatur: ", decodedData.main.temp)
-            //print("Condition: ", decodedData.weather[0].description)
+            self.location = decodedData.name
+            self.temperature = decodedData.main.temp
+            self.conditionID = decodedData.weather[0].id
+            
+            
+            print("Location: ", location)
+            print("Temperature: ", temperature)
+            print("ID: ", conditionID)
+            
+            
         }catch{
             print(error)
         }
