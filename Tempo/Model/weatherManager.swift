@@ -9,9 +9,7 @@
 import Foundation
 
 class weatherManager {
-    var location: String = ""
-    var temperature: Double = 0
-    var conditionID: Int = 0
+    
     let adress = "https://api.openweathermap.org/data/2.5/weather?appid=7013acc9bca4f12a02f7fe47b7646e5c&units=metric"
     
     
@@ -53,9 +51,9 @@ class weatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            self.location = decodedData.name
-            self.temperature = decodedData.main.temp
-            self.conditionID = decodedData.weather[0].id
+            let location = decodedData.name
+            let temperature = decodedData.main.temp
+            let conditionID = decodedData.weather[0].id
             
             
             print("Location: ", location)
@@ -63,10 +61,17 @@ class weatherManager {
             print("ID: ", conditionID)
             
             
+             let weather = WeatherModel(realID: conditionID, locName: location, realTemp: temperature)
+            
+            print(weather.conditionName)
+            
+            
+            
         }catch{
             print(error)
         }
     }
     
+   
    
 }

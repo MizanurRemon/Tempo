@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    
+    let manageweather = weatherManager()
+    
+    
+    let mainLocation: String = ""
+    let mainTemp: Double = 0.0
+    let mainconditionID: Int = 0
+    
+    
+    
+    
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var search: UITextField!
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var place: UILabel!
     
-    var manageweather = weatherManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +76,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         }
         
-        place.text = manageweather.location
+        place.text = mainLocation
     }
     
     
@@ -84,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
     
         }
-        place.text = manageweather.location
+        place.text = mainLocation
         return true
     }
     
