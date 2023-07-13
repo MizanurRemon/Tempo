@@ -99,9 +99,11 @@
 		7696B5292A60142F0063D21F /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
+				7696B55C2A6018050063D21F /* View */,
+				7696B55B2A6017F70063D21F /* Model */,
+				7696B55A2A60177B0063D21F /* Controller */,
 				7696B52A2A60142F0063D21F /* AppDelegate.swift */,
 				7696B52C2A60142F0063D21F /* SceneDelegate.swift */,
-				7696B52E2A60142F0063D21F /* ViewController.swift */,
 				7696B5302A60142F0063D21F /* Main.storyboard */,
 				7696B5332A6014300063D21F /* Assets.xcassets */,
 				7696B5352A6014300063D21F /* LaunchScreen.storyboard */,
@@ -125,6 +127,28 @@
 				7696B54D2A6014300063D21F /* TempoUITestsLaunchTests.swift */,
 			);
 			path = TempoUITests;
+			sourceTree = "<group>";
+		};
+		7696B55A2A60177B0063D21F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7696B52E2A60142F0063D21F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7696B55B2A6017F70063D21F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7696B55C2A6018050063D21F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
